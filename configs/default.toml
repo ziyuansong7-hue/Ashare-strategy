@@ -1,0 +1,50 @@
+[research]
+horizon_days = 20
+min_history_days = 120
+train_fraction = 0.60
+validation_fraction = 0.20
+rebalance_frequency = "month_end"
+winsor_lower = 0.01
+winsor_upper = 0.99
+min_cross_section_size = 200
+min_liquidity_percentile = 0.20
+walk_forward_window = "expanding"
+walk_forward_train_months = 36
+walk_forward_validation_months = 12
+walk_forward_test_months = 12
+walk_forward_step_months = 12
+
+[model]
+n_estimators = 400
+max_depth = 4
+learning_rate = 0.03
+subsample = 0.80
+colsample_bytree = 0.80
+early_stopping_rounds = 30
+random_state = 42
+
+[portfolio]
+top_k = 50
+entry_rank = 50
+exit_rank = 70
+max_stock_weight = 0.03
+max_industry_weight = 0.25
+max_participation_rate = 0.05
+initial_cash = 1000000.0
+default_lot_size = 100
+weighting_method = "equal"
+cash_buffer = 0.02
+min_trade_value = 1000.0
+max_mid_position_fraction = 0.60
+max_mid_cap_weight = 0.70
+# Set these to non-zero values for the low-turnover profiles.
+min_replacement_rank_improvement = 0
+rebalance_weight_tolerance = 0.0
+
+[costs]
+# Demonstration assumptions only. Production research must use effective-dated rates.
+commission_bps = 3.0
+minimum_commission = 5.0
+sell_tax_bps = 5.0
+transfer_bps = 0.1
+slippage_bps = 5.0

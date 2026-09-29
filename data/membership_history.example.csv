@@ -1,0 +1,3 @@
+code,effective_from,effective_to,size_bucket
+000001,2015-01-01,,LARGE
+600000,2015-01-01,2020-12-31,MID
